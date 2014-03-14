@@ -1,0 +1,64 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="272" measuredH="298" mockupW="174" mockupH="241">
+  <controls>
+    <control controlID="6" controlTypeID="__group__" x="98" y="85" w="174" h="27" measuredW="174" measuredH="27" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Pop-Up%20Menu</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="0" w="174" h="-1" measuredW="79" measuredH="27" zOrder="0" locked="false" isInGroup="6"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="151" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <icon>UpDownFillTriangleIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="98" y="178" w="174" h="27" measuredW="174" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Drop-Down%20Menu</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="0" w="174" h="-1" measuredW="79" measuredH="27" zOrder="0" locked="false" isInGroup="7"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="151" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <icon>DownFillTriangleIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="8" controlTypeID="__group__" x="98" y="271" w="174" h="27" measuredW="174" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Drop-Down%20Menu%20Arrow%20Up</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="0" w="174" h="-1" measuredW="79" measuredH="27" zOrder="0" locked="false" isInGroup="8"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="151" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="8">
+          <controlProperties>
+            <icon>UpFillTriangleIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="98" y="57" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <text>Pop-Up%20Menu</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="98" y="147" w="-1" h="-1" measuredW="149" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <text>Drop-Down%20Arrow%20Down</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="98" y="243" w="-1" h="-1" measuredW="133" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <text>Drop-Down%20Arrow%20Up</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

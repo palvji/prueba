@@ -1,0 +1,106 @@
+<mockup version="1.0" skin="sketch" measuredW="469" measuredH="105" mockupW="421" mockupH="67">
+  <controls>
+    <control controlID="4" controlTypeID="__group__" x="48" y="38" w="193" h="26" measuredW="193" measuredH="26" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>oAuth%20Faebook%20Signup%20Button</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="193" h="26" measuredW="193" measuredH="26" zOrder="0" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="193" h="26" measuredW="172" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>545684</color>
+                <text>%20%20%20%20%20Sign%20Up%20with%20Facebook</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="6" y="4" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>FacebookIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="25" y="4" w="-1" h="13" measuredW="5" measuredH="100" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>16777215</color>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="5" controlTypeID="__group__" x="290" y="38" w="179" h="26" measuredW="179" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>oAuth%20Facebook%20Login%20Button</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="179" h="26" measuredW="179" measuredH="26" zOrder="0" locked="false" isInGroup="5">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="179" h="26" measuredW="159" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>545684</color>
+                <text>%20%20%20%20%20Login%20with%20Facebook</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="6" y="4" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>16777215</color>
+                <icon>FacebookIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="25" y="4" w="-1" h="13" measuredW="5" measuredH="100" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>16777215</color>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="290" y="79" w="173" h="26" measuredW="173" measuredH="26" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>oAuth%20Twitter%20Login%20Button</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="173" h="26" measuredW="173" measuredH="26" zOrder="0" locked="false" isInGroup="6">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="173" h="26" measuredW="145" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>65535</color>
+                <text>%20%20%20%20%20Login%20with.Twitter</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="6" y="4" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>TwitterIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="25" y="4" w="-1" h="13" measuredW="5" measuredH="100" zOrder="2" locked="false" isInGroup="0"/>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="48" y="79" w="195" h="26" measuredW="195" measuredH="26" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>oAuth%20Twitter%20Signup%20Button</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="195" h="26" measuredW="195" measuredH="26" zOrder="0" locked="false" isInGroup="7">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="195" h="26" measuredW="158" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>65535</color>
+                <text>%20%20%20%20%20Sign%20Up%20with.Twitter</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="6" y="4" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>TwitterIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::VRule" x="25" y="4" w="-1" h="13" measuredW="5" measuredH="100" zOrder="2" locked="false" isInGroup="0"/>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

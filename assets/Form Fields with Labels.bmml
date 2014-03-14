@@ -1,0 +1,368 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1472" measuredH="617" mockupW="1465" mockupH="585">
+  <controls>
+    <control controlID="71" controlTypeID="__group__" x="78" y="32" w="306" h="27" measuredW="306" measuredH="27" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Input%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="106" y="0" w="200" h="-1" measuredW="79" measuredH="27" zOrder="0" locked="false" isInGroup="71"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="3" w="-1" h="-1" measuredW="88" measuredH="21" zOrder="1" locked="false" isInGroup="71">
+          <controlProperties>
+            <align>right</align>
+            <text>text%20input%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="72" controlTypeID="__group__" x="70" y="73" w="314" h="23" measuredW="314" measuredH="23" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Combo%20Box%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::ComboBox" x="114" y="0" w="200" h="-1" measuredW="123" measuredH="23" zOrder="0" locked="false" isInGroup="72">
+          <controlProperties>
+            <text>combo%20box%20input</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="1" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="1" locked="false" isInGroup="72">
+          <controlProperties>
+            <align>right</align>
+            <text>combo%20box%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="73" controlTypeID="__group__" x="70" y="117" w="314" h="101" measuredW="314" measuredH="101" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Field%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextArea" x="114" y="0" w="200" h="101" measuredW="200" measuredH="140" zOrder="0" locked="false" isInGroup="73"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="93" h="21" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="73">
+          <controlProperties>
+            <align>right</align>
+            <text>text%20field%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="74" controlTypeID="__group__" x="55" y="233" w="205" h="42" measuredW="205" measuredH="42" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Radio%20Button%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="129" y="0" w="-1" h="-1" measuredW="76" measuredH="42" zOrder="0" locked="false" isInGroup="74">
+          <controlProperties>
+            <text>%28o%29%20option%201%0A%28%20%29%20option%202</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="108" h="21" measuredW="103" measuredH="21" zOrder="1" locked="false" isInGroup="74">
+          <controlProperties>
+            <align>right</align>
+            <text>radio%20button%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="75" controlTypeID="__group__" x="28" y="290" w="259" h="42" measuredW="259" measuredH="42" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Checkbox%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="156" y="0" w="-1" h="-1" measuredW="103" measuredH="42" zOrder="0" locked="false" isInGroup="75">
+          <controlProperties>
+            <text>%5B%20%5D%20not%20selected%0A%5Bx%5D%20selected</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="135" h="21" measuredW="89" measuredH="21" zOrder="1" locked="false" isInGroup="75">
+          <controlProperties>
+            <align>right</align>
+            <text>checkbox%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="76" controlTypeID="__group__" x="40" y="345" w="234" h="25" measuredW="234" measuredH="25" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Date%20Chooser%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::DateChooser" x="144" y="0" w="90" h="-1" measuredW="90" measuredH="25" zOrder="0" locked="false" isInGroup="76">
+          <controlProperties>
+            <text>%20%20/%20%20/%20%20%20%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="2" w="123" h="21" measuredW="111" measuredH="21" zOrder="1" locked="false" isInGroup="76">
+          <controlProperties>
+            <align>right</align>
+            <text>date%20chooser%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="77" controlTypeID="__group__" x="7" y="383" w="377" h="70" measuredW="377" measuredH="70" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Multi-Select%20-%20right</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::List" x="177" y="2" w="200" h="68" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="77">
+          <controlProperties>
+            <text>Item%20One%0AItem%20Two%0AItem%20Three</text>
+            <verticalScrollbar>true</verticalScrollbar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="156" h="21" measuredW="142" measuredH="21" zOrder="1" locked="false" isInGroup="77">
+          <controlProperties>
+            <align>right</align>
+            <text>multi-select%20control%20label</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="78" controlTypeID="__group__" x="435" y="32" w="356" h="27" measuredW="356" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Input%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="3" w="97" h="21" measuredW="91" measuredH="21" zOrder="0" locked="false" isInGroup="78">
+          <controlProperties>
+            <align>left</align>
+            <text>text%20input%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="156" y="0" w="200" h="-1" measuredW="79" measuredH="27" zOrder="1" locked="false" isInGroup="78"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="79" controlTypeID="__group__" x="435" y="73" w="356" h="23" measuredW="356" measuredH="23" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Combo%20Box%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="1" w="-1" h="-1" measuredW="99" measuredH="21" zOrder="0" locked="false" isInGroup="79">
+          <controlProperties>
+            <align>left</align>
+            <text>combo%20box%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::ComboBox" x="156" y="0" w="200" h="-1" measuredW="123" measuredH="23" zOrder="1" locked="false" isInGroup="79">
+          <controlProperties>
+            <text>combo%20box%20input</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="80" controlTypeID="__group__" x="435" y="117" w="356" h="101" measuredW="356" measuredH="101" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Field%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="93" h="21" measuredW="88" measuredH="21" zOrder="0" locked="false" isInGroup="80">
+          <controlProperties>
+            <align>left</align>
+            <text>text%20field%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="156" y="0" w="200" h="101" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="80"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="81" controlTypeID="__group__" x="435" y="233" w="232" h="42" measuredW="232" measuredH="42" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Radio%20Button%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="108" h="21" measuredW="103" measuredH="21" zOrder="0" locked="false" isInGroup="81">
+          <controlProperties>
+            <align>left</align>
+            <text>radio%20button%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="156" y="0" w="-1" h="-1" measuredW="76" measuredH="42" zOrder="1" locked="false" isInGroup="81">
+          <controlProperties>
+            <text>%28o%29%20option%201%0A%28%20%29%20option%202</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="82" controlTypeID="__group__" x="435" y="290" w="259" h="42" measuredW="259" measuredH="42" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Checkbox%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="135" h="21" measuredW="92" measuredH="21" zOrder="0" locked="false" isInGroup="82">
+          <controlProperties>
+            <align>left</align>
+            <text>checkbox%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="156" y="0" w="-1" h="-1" measuredW="103" measuredH="42" zOrder="1" locked="false" isInGroup="82">
+          <controlProperties>
+            <text>%5B%20%5D%20not%20selected%0A%5Bx%5D%20selected</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="83" controlTypeID="__group__" x="435" y="345" w="246" h="25" measuredW="246" measuredH="25" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Date%20Chooser%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="2" w="123" h="21" measuredW="115" measuredH="21" zOrder="0" locked="false" isInGroup="83">
+          <controlProperties>
+            <align>left</align>
+            <text>date%20chooser%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::DateChooser" x="156" y="0" w="90" h="-1" measuredW="90" measuredH="25" zOrder="1" locked="false" isInGroup="83">
+          <controlProperties>
+            <text>%20%20/%20%20/%20%20%20%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="84" controlTypeID="__group__" x="435" y="383" w="356" h="70" measuredW="356" measuredH="70" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Multi-Select%20-%20left</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="156" h="21" measuredW="144" measuredH="21" zOrder="0" locked="false" isInGroup="84">
+          <controlProperties>
+            <align>left</align>
+            <text>multi-select%20control%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::List" x="156" y="2" w="200" h="68" measuredW="100" measuredH="126" zOrder="1" locked="false" isInGroup="84">
+          <controlProperties>
+            <text>Item%20One%0AItem%20Two%0AItem%20Three</text>
+            <verticalScrollbar>true</verticalScrollbar>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="85" controlTypeID="__group__" x="877" y="35" w="200" h="51" measuredW="200" measuredH="51" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Input%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="97" h="21" measuredW="91" measuredH="21" zOrder="0" locked="false" isInGroup="85">
+          <controlProperties>
+            <align>left</align>
+            <text>text%20input%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="24" w="200" h="-1" measuredW="79" measuredH="27" zOrder="1" locked="false" isInGroup="85"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="86" controlTypeID="__group__" x="877" y="102" w="200" h="44" measuredW="200" measuredH="44" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Combo%20Box%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="99" measuredH="21" zOrder="0" locked="false" isInGroup="86">
+          <controlProperties>
+            <align>left</align>
+            <text>combo%20box%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::ComboBox" x="0" y="21" w="200" h="-1" measuredW="123" measuredH="23" zOrder="1" locked="false" isInGroup="86">
+          <controlProperties>
+            <text>combo%20box%20input</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="87" controlTypeID="__group__" x="877" y="161" w="200" h="122" measuredW="200" measuredH="122" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Text%20Field%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="93" h="21" measuredW="88" measuredH="21" zOrder="0" locked="false" isInGroup="87">
+          <controlProperties>
+            <align>left</align>
+            <text>text%20field%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="0" y="21" w="200" h="101" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="87"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="88" controlTypeID="__group__" x="877" y="301" w="108" h="63" measuredW="108" measuredH="63" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Radio%20Button%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="108" h="21" measuredW="103" measuredH="21" zOrder="0" locked="false" isInGroup="88">
+          <controlProperties>
+            <align>left</align>
+            <text>radio%20button%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="21" w="-1" h="-1" measuredW="76" measuredH="42" zOrder="1" locked="false" isInGroup="88">
+          <controlProperties>
+            <text>%28o%29%20option%201%0A%28%20%29%20option%202</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="89" controlTypeID="__group__" x="877" y="379" w="135" h="67" measuredW="135" measuredH="67" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Checkbox%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="135" h="21" measuredW="92" measuredH="21" zOrder="0" locked="false" isInGroup="89">
+          <controlProperties>
+            <align>left</align>
+            <text>checkbox%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="0" y="25" w="-1" h="-1" measuredW="103" measuredH="42" zOrder="1" locked="false" isInGroup="89">
+          <controlProperties>
+            <text>%5B%20%5D%20not%20selected%0A%5Bx%5D%20selected</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="90" controlTypeID="__group__" x="877" y="467" w="123" h="46" measuredW="123" measuredH="46" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Date%20Chooser%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="123" h="21" measuredW="115" measuredH="21" zOrder="0" locked="false" isInGroup="90">
+          <controlProperties>
+            <align>left</align>
+            <text>date%20chooser%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::DateChooser" x="0" y="21" w="90" h="-1" measuredW="90" measuredH="25" zOrder="1" locked="false" isInGroup="90">
+          <controlProperties>
+            <text>%20%20/%20%20/%20%20%20%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="91" controlTypeID="__group__" x="877" y="528" w="200" h="89" measuredW="200" measuredH="89" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Multi-Select%20-%20top</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="156" h="21" measuredW="144" measuredH="21" zOrder="0" locked="false" isInGroup="91">
+          <controlProperties>
+            <align>left</align>
+            <text>multi-select%20control%20label</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::List" x="0" y="21" w="200" h="68" measuredW="100" measuredH="126" zOrder="1" locked="false" isInGroup="91">
+          <controlProperties>
+            <text>Item%20One%0AItem%20Two%0AItem%20Three</text>
+            <verticalScrollbar>true</verticalScrollbar>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::StickyNote" x="1169" y="32" w="303" h="234" measuredW="109" measuredH="123" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>%7Bcolor%3A%23ff0000%7DAbout%7Bcolor%7D%0AForm%20elements%20with%20labels%20in%20left%2C%20right%2C%20and%20top-aligned%20formats%0A%20%0A%7Bcolor%3A%23ff0000%7DInstallation%7Bcolor%7D%0ATo%20use%20as%20a%20symbol%20library%2C%20add%20to%20your%20account%20assets%20or%20to%20a%20project%20assets%20folder.%0A%20%0A%7Bcolor%3A%23ff0000%7DVersion%20History%7Bcolor%7D%0ACreated%20by%20Balsamiq%20on%207%20Jan%202013</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
