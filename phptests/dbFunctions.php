@@ -46,11 +46,36 @@
 	{
 		$con = conectarBBDD($con);
 
+		//tengo filtro de nombre
+		if($filtro['nombre'])
+		{
+			//tengo ambos filtros
+			if($filtro['cp'])
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro['nombre'] . "%' AND cp = " . $filtro['cp']);
+			}
+			//solo tengo el de nombre
+			else
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro['nombre'] . "%'");
+			}
+		}
+		//solo tengo el de CP
+		else if($filtro['cp'])
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp = " . $filtro['cp']);
+		}
+		//no tengo ningun filtro
+		else
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email");
+		}
+		/*
 		if(is_numeric($filtro))
 			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp =" . $filtro);
 		else
 			$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro . "%'");
-		//$ids = array();
+		//$ids = array();*/
 		$elementos = array();
 		
 		while($row = mysqli_fetch_array($result))
