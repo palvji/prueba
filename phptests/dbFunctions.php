@@ -63,7 +63,7 @@
 		//solo tengo el de CP
 		else if($filtro['cp'])
 		{
-			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp = " . $filtro['cp']);
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp like '%" . $filtro['cp'] . "%'");
 		}
 		//no tengo ningun filtro
 		else

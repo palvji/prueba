@@ -11,6 +11,26 @@
 
 		.error {color: #FF0000;}
 	</style>
+	<script>
+		function showHint(str)
+		{
+		if (str.length==0)
+		  {
+		  document.getElementById("txtHint").innerHTML="";
+		  return;
+		  }
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+		xmlhttp.open("GET","gethint.php?q="+str,true);
+		xmlhttp.send();
+		}
+	</script>
 </head>  
 <body>
 	<?php
@@ -64,7 +84,6 @@
 	session_start();
 	include 'loadData.php';
 
-
 	//establezco si hay página o no
 	if($_GET['page'])
 	{
@@ -90,17 +109,17 @@
 		$filtro = $_POST["query"];
 		
 		//si el campo de CP no cumple la comprobacion, elimino filtros de busqueda y muestro el error
-		if (!checkCP($filtroCP))
+		/*if (!checkCP($filtroCP))
 		{
 			$cpError = '* El CP deben ser 5 digitos!';
 			$filtro = $_SESSION['filtro']['nombre']; //dejo el filtro de nombre que tuviera antes la sesion
 		}
 		else
 		{
-			$cpError = '';
+			$cpError = '';*/
 			$_SESSION['filtro']['nombre'] = $filtro;
 			$_SESSION['filtro']['cp'] = $filtroCP;
-		}		
+		//}		
 	}
 
 	if ($_GET["action"] == "delete"){
@@ -108,16 +127,29 @@
 	}
 
 	if ($_POST["action"] == "insert"){
-		insert($_POST["nombre"], $_POST["email"], $_POST["cp"]);
+		if(checkCP($_POST["cp"]))
+		{
+			insert($_POST["nombre"], $_POST["email"], $_POST["cp"]);
+			$nombreInsertar = '';
+			$emailInsertar = '';
+			$cpInsertar = '';
+		}
+		else
+		{
+			$nombreInsertar = $_POST["nombre"];
+			$emailInsertar = $_POST["email"];
+			$cpInsertar = $_POST["cp"];
+			$cpError = '* El CP deben ser 5 digitos!';
+		}
 	}
 
 	echo "<h1> Search an user: </h1>";
 	echo '<form action="list.php" method="post">
 		  			<input type="hidden" name="action" value="search">
 		  			<ul>
-		  			<li>Nombre: <input type="text" name="query" value=' . $filtro . '></li>
-		  			<li>CP: <input type="text" name="queryCP" value=' . $filtroCP . '>
-		  			<span class="error"> ' . $cpError . '</span></li>
+		  			<li>Nombre: <input type="text" name="query" value="' . $filtro . '" onkeyup="showHint(this.value)">
+		  			<span id="txtHint"> </span></li>
+		  			<li>CP: <input type="text" name="queryCP" value=' . $filtroCP . '></li>
 		  			<br/><input type="submit" value="Buscar">
 		  			</ul>
 		  		</form>';
@@ -143,9 +175,10 @@
 	echo "<h1> Insert an user </h1>";
 	echo '<form action="list.php" method="post">
 				<input type="hidden" name="action" value="insert">
-				Nombre:<input type="text" name="nombre">
-				email:<input type="text" name="email">
-				CP:<input type="text" name="cp">
+				Nombre:<input type="text" name="nombre" value="' . $nombreInsertar . '">
+				email:<input type="text" name="email" value="' . $emailInsertar . '">
+				CP:<input type="text" name="cp" value="' . $cpInsertar . '">
+				<span class="error"> ' . $cpError . '</span>
 				<input type="submit" value="Insertar">
 			</form>';
 
