@@ -64,6 +64,7 @@
 	session_start();
 	include 'loadData.php';
 
+
 	//establezco si hay página o no
 	if($_GET['page'])
 	{
@@ -152,6 +153,8 @@
 	
 	<br/>
 	<a href="index.html"> Back </a>
+	<br/>
+	<a href="ajax.php"> ajax </a>
 
 
 </body>  
