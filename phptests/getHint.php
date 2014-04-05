@@ -14,7 +14,7 @@ if ($q !== "")
     $len=strlen($q);
     foreach($data as $id => $user)
     {
-      if (stristr($q, substr($user['nombre'],0,$len)))
+      if (stristr($user['nombre'], $q))
       {
         if ($hint=="")
         {

@@ -119,7 +119,7 @@
 			$cpError = '';*/
 			$_SESSION['filtro']['nombre'] = $filtro;
 			$_SESSION['filtro']['cp'] = $filtroCP;
-		//}		
+	
 	}
 
 	if ($_GET["action"] == "delete"){
