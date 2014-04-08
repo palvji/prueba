@@ -52,7 +52,7 @@
 			//tengo ambos filtros
 			if($filtro['cp'])
 			{
-				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro['nombre'] . "%' AND cp = " . $filtro['cp']);
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro['nombre'] . "%' AND cp like '%" . $filtro['cp'] . "%'");
 			}
 			//solo tengo el de nombre
 			else
@@ -92,6 +92,116 @@
 
 		//return $resultado;
 		return $elementos;
+	}
+
+	function loadUsersAjax($filtroNombre, $filtroCP, $pag, $elem)
+	{
+		$con = conectarBBDD($con);
+
+		//tengo filtro de nombre
+		if($filtroNombre)
+		{
+			//tengo ambos filtros
+			if($filtroCP)
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtroNombre . "%' AND cp like '%"
+				 . $filtroCP . "%' LIMIT " . $pag . "," . $elem);
+			}
+			//solo tengo el de nombre
+			else
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtroNombre
+					. "%'" . " LIMIT " . $pag . "," . $elem);
+			}
+		}
+		//solo tengo el de CP
+		else if($filtroCP)
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp like '%" . $filtroCP
+				. "%'" . " LIMIT " . $pag . "," . $elem);
+		}
+		//no tengo ningun filtro
+		else
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email LIMIT " . $pag . "," . $elem);
+		}
+		/*
+		if(is_numeric($filtro))
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp =" . $filtro);
+		else
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro . "%'");
+		//$ids = array();*/
+		$elementos = array();
+		
+		while($row = mysqli_fetch_array($result))
+		{
+		  	//array_push($ids, $row['id']);
+		  	//$aux = array("nombre" => $row['nombre'], "email" => $row['email']);
+		  	$aux = array("id" => $row['id'], "nombre" => $row['nombre'], "email" => $row['email'], "cp" => $row['cp']);
+		  	array_push($elementos, $aux);
+
+		}
+
+		//$resultado = array_combine($ids, $elementos);
+		desconectarBBDD($con);
+
+		//return $resultado;
+		return $elementos;
+	}
+
+	function getNumEltos($filtroNombre, $filtroCP, $pag, $elem)
+	{
+		$con = conectarBBDD($con);
+
+		//tengo filtro de nombre
+		if($filtroNombre)
+		{
+			//tengo ambos filtros
+			if($filtroCP)
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtroNombre . "%' AND cp like '%"
+				 . $filtroCP . "%'");
+			}
+			//solo tengo el de nombre
+			else
+			{
+				$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtroNombre
+					. "%'");
+			}
+		}
+		//solo tengo el de CP
+		else if($filtroCP)
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp like '%" . $filtroCP
+				. "%'");
+		}
+		//no tengo ningun filtro
+		else
+		{
+			$result = mysqli_query($con, "SELECT * FROM name_email");
+		}
+		/*
+		if(is_numeric($filtro))
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE cp =" . $filtro);
+		else
+			$result = mysqli_query($con, "SELECT * FROM name_email WHERE nombre like '%" . $filtro . "%'");
+		//$ids = array();*/
+		$elementos = array();
+		
+		while($row = mysqli_fetch_array($result))
+		{
+		  	//array_push($ids, $row['id']);
+		  	//$aux = array("nombre" => $row['nombre'], "email" => $row['email']);
+		  	$aux = array("id" => $row['id'], "nombre" => $row['nombre'], "email" => $row['email'], "cp" => $row['cp']);
+		  	array_push($elementos, $aux);
+
+		}
+
+		//$resultado = array_combine($ids, $elementos);
+		desconectarBBDD($con);
+
+		//return $resultado;
+		return count($elementos);
 	}
 
 ?>
