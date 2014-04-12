@@ -43,19 +43,33 @@
 				    var respuesta = xmlhttp.responseText;
       				var respParseada = JSON.parse(respuesta);
       				var vectorUsuarios = respParseada["vector"];
+      				var tablaNueva;
 
-      				var tablaNueva = "<tr><td>ID</td><td>NAME</td><td>EMAIL</td><td>CP</td><td>DELETE</td></tr>";
-      				for (var i = 0; i < vectorUsuarios.length; i++) {
-      					tablaNueva += "<tr><td>" + vectorUsuarios[i]["id"] + "</td>";
-      					tablaNueva += "<td>" + vectorUsuarios[i]["nombre"] + "</td>";
-      					tablaNueva += "<td>" + vectorUsuarios[i]["email"] + "</td>";
-      					tablaNueva += "<td>" + vectorUsuarios[i]["cp"] + "</td>";
-      					tablaNueva += "<td><input type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + "); listaAjax(" + pag + "," + nElem + ")' ></td></tr>";
-      				};
+      				if(vectorUsuarios == "")
+      				{
+      					tablaNueva = "FUCK OFF";
+      					return false;
+
+      				}
+      				else
+      				{
+	      				tablaNueva = "<tr><td>ID</td><td>NAME</td><td>EMAIL</td><td>CP</td><td>DELETE</td></tr>";
+	      				for (var i = 0; i < vectorUsuarios.length; i++) {
+	      					tablaNueva += "<tr><td>" + vectorUsuarios[i]["id"] + "</td>";
+	      					tablaNueva += "<td>" + vectorUsuarios[i]["nombre"] + "</td>";
+	      					tablaNueva += "<td>" + vectorUsuarios[i]["email"] + "</td>";
+	      					tablaNueva += "<td>" + vectorUsuarios[i]["cp"] + "</td>";
+	      					//tablaNueva += "<td><input type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + ")' ></td></tr>";
+	      					tablaNueva += "<td><input type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + ")' ></td></tr>";
+	      				};
+	      			}
       				document.getElementById("idTabla").innerHTML = tablaNueva;
       				document.getElementById("idNumEltos").innerHTML = "Num elementos: " + respParseada["numTotal"];
       				var totalPags = Math.ceil(respParseada["numTotal"] / nElem);
    					document.getElementById("idPag").innerHTML = "Pagina: " + ((pag / nElem) + 1) + "/" + totalPags;
+   					//document.getElementById("idPagListar").value = 0;
+   					document.getElementById("idPagListar").value = pag;
+
 
    					//Si no estoy en la primera pagina, muestro "Anterior"
    					if(pag > 0)
@@ -70,8 +84,9 @@
 
 
    					//Si no estoy en la ultima pagina, muestro "Siguiente"
-   					if(((pag/nElem) + 1) != totalPags)
+   					if(((pag/nElem) + 1) < totalPags)
    					{
+
 	      				var enlacePagSiguiente = "<a href=# onClick='listaAjax(" + (pag + nElem) + "," + nElem + ")'> SIGUIENTE >> </a>";
 	      				document.getElementById("idPagSig").innerHTML= enlacePagSiguiente;
 	      			}
@@ -102,7 +117,12 @@
 			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			  {
 			    //document.getElementById("idPrueba").innerHTML=xmlhttp.responseText;
-			   return true;
+			    var pag = parseInt(document.getElementById("idPagListar").value);
+			    if (listaAjax(pag,10) == false)
+			    {
+			    	listaAjax(pag - 10, 10);
+			    }
+			   //return true;
 			  }
 			}
 			xmlhttp.open("GET","deleteuserajax.php?id="+id,true);
@@ -246,6 +266,8 @@
 	//echo "Pagina ". $pagina . "/" . $paginasTotales;
 	echo "<div id=idPag> Pagina: " . $pagina . "/" . $paginasTotales . "</div>";
 	echo "<div id=idNumEltos>Num elementos: " . count($data) . "</div>";
+	//echo '<div id="idPagListar" style="display: none;"> hola</div>';
+	echo '<input type="hidden" id="idPagListar" value="0">';
 
 	//llamo a la función de mostrar usuarios, y la página a mostrar
 	listUsers($data, $pagina);
@@ -256,7 +278,10 @@
 	//if($pagina<$paginasTotales)
 		//echo '<div id=idPagSig><a href ="' . $_SERVER['PHP_SELF'] . '?page=' . ($pagina + 1) .'"> Siguiente >> </a></div>';
 	echo '<div id=idPagAnt></div>';
-	echo '<div id=idPagSig><a href=# onClick="listaAjax(10,10)"> SIGUIENTE >></a></div>';
+	echo '<div id=idPagSig>';
+	if($pagina < $paginasTotales)
+		echo '<a href=# onClick="listaAjax(10,10)"> SIGUIENTE >></a>';
+	echo '</div>';
 		//echo '<a onclick="listaAjax(10,10)" href="#"> Siguiente </a>';
 
 	echo "<h1> Insert an user </h1>";

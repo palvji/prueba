@@ -7,7 +7,7 @@ $queryCP = $_REQUEST["queryCP"];
 $pag = $_REQUEST["pag"];
 $nElem = $_REQUEST["nElem"];
 
-sleep(1);
+//sleep(1);
 
 $vector = loadUsersAjax($query, $queryCP, $pag, $nElem);
 $num_eltos = getNumEltos($query, $queryCP, $pag, $nElem);
