@@ -1,6 +1,7 @@
 <!DOCTYPE html>   
 <html> 
 <head>   
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<title>Name - Email Table</title>  
 	<style>
 		table,th,td
@@ -12,122 +13,120 @@
 		.error {color: #FF0000;}
 	</style>
 	<script>
-		function showHint(str)
-		{
-		if (str.length==0)
-		  {
-		  document.getElementById("txtHint").innerHTML="";
-		  return;
-		  }
+
+
+	function showHint(str)
+	{
+	if (str.length==0)
+	  {
+	  $("#txtHint").html("");
+	  return;
+	  }
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+	    $("#txtHint").html(xmlhttp.responseText);
+	    }
+	  }
+	xmlhttp.open("GET","gethint.php?q="+str,true);
+	xmlhttp.send();
+	}
+
+	function listaAjax(pag,nElem)
+	{
+
 		var xmlhttp=new XMLHttpRequest();
 		xmlhttp.onreadystatechange=function()
-		  {
+		{
+
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		    {
-		    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+			    var respuesta = xmlhttp.responseText;
+  				var respParseada = JSON.parse(respuesta);
+  				var vectorUsuarios = respParseada["vector"];
+  				var tablaNueva;
+
+  				tablaNueva = "<tr><td>ID</td><td>NAME</td><td>EMAIL</td><td>CP</td><td>DELETE</td></tr>";
+  				for (var i = 0; i < vectorUsuarios.length; i++) {
+  					tablaNueva += "<tr><td>" + vectorUsuarios[i]["id"] + "</td>";
+  					tablaNueva += "<td>" + vectorUsuarios[i]["nombre"] + "</td>";
+  					tablaNueva += "<td>" + vectorUsuarios[i]["email"] + "</td>";
+  					tablaNueva += "<td>" + vectorUsuarios[i]["cp"] + "</td>";
+  					tablaNueva += "<td><input id='idBotonBorrar' type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + ")' ></td></tr>";
+  				};
+
+  				$("#idTabla").html(tablaNueva);
+
+  				$("#idTabla").find("input").click(function(){
+  					$(this).parents("tr").fadeOut("4000");
+  				})
+
+
+  				$("#idNumEltos").html("Num elementos: " + respParseada["numTotal"]);
+  				var totalPags = Math.ceil(respParseada["numTotal"] / nElem);
+					$("#idPag").html("Pagina: " + ((pag / nElem) + 1) + "/" + totalPags);
+					$("#idPagListar").val(pag);
+
+
+					//Si no estoy en la primera pagina, muestro "Anterior"
+					if(pag > 0)
+					{
+						var enlacePagAnterior = "<a href=# onClick='listaAjax(" + (pag - nElem) + "," + nElem + ")'> << ANTERIOR </a>";
+						$("#idPagAnt").html(enlacePagAnterior);
+					}
+					else
+					{
+						$("#idPagAnt").html("");
+					}
+
+
+					//Si no estoy en la ultima pagina, muestro "Siguiente"
+					if(((pag/nElem) + 1) < totalPags)
+					{
+
+      				var enlacePagSiguiente = "<a href=# onClick='listaAjax(" + (pag + nElem) + "," + nElem + ")'> SIGUIENTE >> </a>";
+      				$("#idPagSig").html(enlacePagSiguiente);
+      			}
+      			else
+      			{
+      				$("#idPagSig").html("");
+      			}
 		    }
-		  }
-		xmlhttp.open("GET","gethint.php?q="+str,true);
+		}
+
+		var query = $("#idNombre").val();
+		var queryCP = $("#idCp").val();
+
+		var cadenaUrl = "?query=" + query + "&queryCP=" + queryCP + "&pag=" + pag + "&nElem=" + nElem;
+		
+		xmlhttp.open("GET","getusersajax.php"+cadenaUrl,true);
 		xmlhttp.send();
-		}
 
-		function listaAjax(pag,nElem)
+	}
+
+	function borrarAjax(id)
+	{
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
 		{
-
-			var xmlhttp=new XMLHttpRequest();
-			xmlhttp.onreadystatechange=function()
-			{
-
-			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			    {
-				    var respuesta = xmlhttp.responseText;
-      				var respParseada = JSON.parse(respuesta);
-      				var vectorUsuarios = respParseada["vector"];
-      				var tablaNueva;
-
-      				if(vectorUsuarios == "")
-      				{
-      					tablaNueva = "FUCK OFF";
-      					return false;
-
-      				}
-      				else
-      				{
-	      				tablaNueva = "<tr><td>ID</td><td>NAME</td><td>EMAIL</td><td>CP</td><td>DELETE</td></tr>";
-	      				for (var i = 0; i < vectorUsuarios.length; i++) {
-	      					tablaNueva += "<tr><td>" + vectorUsuarios[i]["id"] + "</td>";
-	      					tablaNueva += "<td>" + vectorUsuarios[i]["nombre"] + "</td>";
-	      					tablaNueva += "<td>" + vectorUsuarios[i]["email"] + "</td>";
-	      					tablaNueva += "<td>" + vectorUsuarios[i]["cp"] + "</td>";
-	      					//tablaNueva += "<td><input type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + ")' ></td></tr>";
-	      					tablaNueva += "<td><input type='button' value='Eliminar' onClick='borrarAjax(" + vectorUsuarios[i]["id"] + ")' ></td></tr>";
-	      				};
-	      			}
-      				document.getElementById("idTabla").innerHTML = tablaNueva;
-      				document.getElementById("idNumEltos").innerHTML = "Num elementos: " + respParseada["numTotal"];
-      				var totalPags = Math.ceil(respParseada["numTotal"] / nElem);
-   					document.getElementById("idPag").innerHTML = "Pagina: " + ((pag / nElem) + 1) + "/" + totalPags;
-   					//document.getElementById("idPagListar").value = 0;
-   					document.getElementById("idPagListar").value = pag;
-
-
-   					//Si no estoy en la primera pagina, muestro "Anterior"
-   					if(pag > 0)
-   					{
-   						var enlacePagAnterior = "<a href=# onClick='listaAjax(" + (pag - nElem) + "," + nElem + ")'> << ANTERIOR </a>";
-   						document.getElementById("idPagAnt").innerHTML = enlacePagAnterior;
-   					}
-   					else
-   					{
-   						document.getElementById("idPagAnt").innerHTML = "";
-   					}
-
-
-   					//Si no estoy en la ultima pagina, muestro "Siguiente"
-   					if(((pag/nElem) + 1) < totalPags)
-   					{
-
-	      				var enlacePagSiguiente = "<a href=# onClick='listaAjax(" + (pag + nElem) + "," + nElem + ")'> SIGUIENTE >> </a>";
-	      				document.getElementById("idPagSig").innerHTML= enlacePagSiguiente;
-	      			}
-	      			else
-	      			{
-	      				document.getElementById("idPagSig").innerHTML= "";
-	      			}
-			    }
-			}
-
-			var query = document.getElementById("idNombre").value;
-			var queryCP = document.getElementById("idCp").value;
-
-			var cadenaUrl = "?query=" + query + "&queryCP=" + queryCP + "&pag=" + pag + "&nElem=" + nElem;
-			
-			//var cadenaUrl = "?q=" + "M";
-			xmlhttp.open("GET","getusersajax.php"+cadenaUrl,true);
-			//xmlhttp.open("GET","getHint.php"+cadenaUrl,true);
-			xmlhttp.send();
-
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		  {
+		    var pag = parseInt($("#idPagListar").val());
+		    listaAjax(pag,10);
+		  }
 		}
+		xmlhttp.open("GET","deleteuserajax.php?id="+id,true);
+		xmlhttp.send();
+	}
 
-		function borrarAjax(id)
-		{
-			var xmlhttp=new XMLHttpRequest();
-			xmlhttp.onreadystatechange=function()
-			{
-			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			  {
-			    //document.getElementById("idPrueba").innerHTML=xmlhttp.responseText;
-			    var pag = parseInt(document.getElementById("idPagListar").value);
-			    if (listaAjax(pag,10) == false)
-			    {
-			    	listaAjax(pag - 10, 10);
-			    }
-			   //return true;
-			  }
-			}
-			xmlhttp.open("GET","deleteuserajax.php?id="+id,true);
-			xmlhttp.send();
-		}
+$(document).ready(function(){
+  $("#idTabla").find("input").click(function(){
+  	$(this).parents("tr").fadeOut("4000");
+  })
+}); 
+
 	</script>
 </head>  
 <body>
@@ -173,7 +172,7 @@
 	  		echo '<td>' . $nuevoData[$i]['cp'] . '</td>';
 	  		echo '<td>';
 	  		echo '<form action="list.php" method="get">';
-			echo '<input type="submit" value="Eliminar">
+			echo '<input id="idBotonBorrar" type="submit" value="Eliminar">
 					<input type="hidden" name="action" value="delete">
 	  				<input type="hidden" name="id" value="' . $nuevoData[$i]['id'] . '">
 	  				</form>';
@@ -237,18 +236,7 @@
 			$cpError = '* El CP deben ser 5 digitos!';
 		}
 	}
-/*
-	echo "<h1> Search an user: </h1>";
-	echo '<form action="list.php" method="post">
-		  			<input type="hidden" name="action" value="search">
-		  			<ul>
-		  			<li>Nombre: <input type="text" name="query" value="' . $filtro . '" onkeyup="showHint(this.value)">
-		  			<span id="txtHint"> </span></li>
-		  			<li>CP: <input type="text" name="queryCP" value=' . $filtroCP . '></li>
-		  			<br/><input type="submit" value="Buscar">
-		  			</ul>
-		  		</form>';
-*/
+
 
 	echo "<h1> Search an user: </h1>";
 	echo '<input type="hidden" name="action" value="search">
@@ -266,23 +254,16 @@
 	//echo "Pagina ". $pagina . "/" . $paginasTotales;
 	echo "<div id=idPag> Pagina: " . $pagina . "/" . $paginasTotales . "</div>";
 	echo "<div id=idNumEltos>Num elementos: " . count($data) . "</div>";
-	//echo '<div id="idPagListar" style="display: none;"> hola</div>';
 	echo '<input type="hidden" id="idPagListar" value="0">';
 
 	//llamo a la función de mostrar usuarios, y la página a mostrar
 	listUsers($data, $pagina);
 
-	//muestro enlaces a página anterior/siguiente si es que las hay
-	//if($pagina>1)
-		//echo '<div id=idPagAnt><a href ="' . $_SERVER['PHP_SELF'] . '?page=' . ($pagina - 1) .'"> << Anterior </a></div>';
-	//if($pagina<$paginasTotales)
-		//echo '<div id=idPagSig><a href ="' . $_SERVER['PHP_SELF'] . '?page=' . ($pagina + 1) .'"> Siguiente >> </a></div>';
 	echo '<div id=idPagAnt></div>';
 	echo '<div id=idPagSig>';
 	if($pagina < $paginasTotales)
 		echo '<a href=# onClick="listaAjax(10,10)"> SIGUIENTE >></a>';
 	echo '</div>';
-		//echo '<a onclick="listaAjax(10,10)" href="#"> Siguiente </a>';
 
 	echo "<h1> Insert an user </h1>";
 	echo '<form action="list.php" method="post">
